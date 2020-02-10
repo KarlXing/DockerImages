@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
 
  && rm -rf /var/lib/apt/lists/*
 
+ENV HOME=/home/user
+RUN chmod 777 /home/user
+
 # Install Miniconda
 RUN curl -so ~/miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.5.11-Linux-x86_64.sh \
  && chmod +x ~/miniconda.sh \
@@ -20,7 +23,7 @@ ENV PATH=/home/user/miniconda/bin:$PATH
 ENV CONDA_AUTO_UPDATE_CONDA=false
 
 # Create a Python 3.6 environment
-RUN /home/user/miniconda/bin/conda create -y --name py36 python=3.6.9 \
+RUN /home/user/miniconda/bin/conda create -y --name py36 python=3.6 \
  && /home/user/miniconda/bin/conda clean -ya
 ENV CONDA_DEFAULT_ENV=py36
 ENV CONDA_PREFIX=/home/user/miniconda/envs/$CONDA_DEFAULT_ENV
