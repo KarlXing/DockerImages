@@ -64,11 +64,11 @@ RUN conda install -y -c menpo opencv3=3.1.0 \
 
 # Install AWS
 RUN apt install -y zip \
-  && conda install -c conda-forge awscli
+  && conda install -c conda-forge awscli \
   && pip install awscli-plugin-endpoint
 
 # Others
 RUN apt install -y tmux \
   && apt install -y libopenmpi-dev \
-  && pip install mpi4py \
+  && pip install mpi4py 
 
