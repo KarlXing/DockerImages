@@ -76,12 +76,6 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN conda install -y -c menpo opencv3=3.1.0 \
  && conda clean -ya
 
-# Install AWS
-RUN apt install -y zip \
-  && conda install -y -c conda-forge awscli \
-  && conda clean -ya \
-  && pip install awscli-plugin-endpoint
-
 # Others
 RUN apt install -y tmux \
   && apt install -y libopenmpi-dev \
