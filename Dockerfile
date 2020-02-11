@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
 
  && rm -rf /var/lib/apt/lists/*
 
+USER user
 ENV HOME=/home/user
 RUN chmod 777 /home/user
 
@@ -37,6 +38,7 @@ RUN conda install -y -c pytorch \
     "pytorch=1.2.0=py3.6_cuda10.0.130_cudnn7.6.2_0" \
     "torchvision=0.4.0=py36_cu100" \
  && conda clean -ya
+
 
 # Tensorflow
 RUN pip install tensorflow
@@ -73,5 +75,6 @@ RUN apt install -y zip \
 # Others
 RUN apt install -y tmux \
   && apt install -y libopenmpi-dev \
-  && pip install mpi4py 
+  && pip install mpi4py \
+  && RUN conda install pandas 
 
