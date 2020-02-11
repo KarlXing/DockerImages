@@ -76,9 +76,3 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN conda install -y -c menpo opencv3=3.1.0 \
  && conda clean -ya
 
-# Others
-RUN apt install -y tmux \
-  && apt install -y libopenmpi-dev \
-  && pip install mpi4py \
-  && RUN conda install pandas 
-
