@@ -78,7 +78,8 @@ RUN conda install -y -c menpo opencv3=3.1.0 \
 
 # Install AWS
 RUN apt install -y zip \
-  && conda install -c conda-forge awscli \
+  && conda install -y -c conda-forge awscli \
+  && conda clean -ya \
   && pip install awscli-plugin-endpoint
 
 # Others
