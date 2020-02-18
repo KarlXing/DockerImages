@@ -50,8 +50,15 @@ RUN conda install -y -c pytorch \
  && conda clean -ya
 
 
-# Tensorflow
-RUN pip install tensorflow
+# Tensorflow and other ml libs
+RUN pip install tensorflow-gpu==2.0 \
+ && pip install pandas \
+ && pip install albumentations \
+ && pip install scikit-image \
+ && pip install matplotlib \
+ && pip install pathlib \
+ && pip install pyarrow
+
 
 # Install HDF5 Python bindings
 RUN conda install -y h5py=2.8.0 \
