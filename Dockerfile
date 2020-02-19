@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     bzip2 \
     libx11-6 \
     tmux \
+    zip \
 
  && rm -rf /var/lib/apt/lists/*
 
@@ -57,7 +58,8 @@ RUN pip install tensorflow-gpu==2.0 \
  && pip install scikit-image \
  && pip install matplotlib \
  && pip install pathlib \
- && pip install pyarrow
+ && pip install pyarrow \
+ && pip install awscli-plugin-endpoint
 
 
 # Install HDF5 Python bindings
