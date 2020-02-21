@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libx11-6 \
     tmux \
     zip \
+    vim \
 
  && rm -rf /var/lib/apt/lists/*
 
