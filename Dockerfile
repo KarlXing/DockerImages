@@ -58,8 +58,7 @@ RUN pip install tensorflow-gpu==2.0 \
  && pip install scikit-image \
  && pip install matplotlib \
  && pip install pathlib \
- && pip install pyarrow \
- && pip install awscli-plugin-endpoint
+ && pip install pyarrow 
 
 
 # Install HDF5 Python bindings
