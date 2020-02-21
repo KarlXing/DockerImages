@@ -86,6 +86,6 @@ RUN conda install -y -c menpo opencv3=3.1.0 \
  && conda clean -ya
 
 # Pillow
-RUN pip uninstall pillow  \
+RUN pip uninstall -y pillow  \
  && pip install pillow==6.1 \
  && pip install requests
