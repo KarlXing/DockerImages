@@ -84,3 +84,8 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
  && sudo rm -rf /var/lib/apt/lists/*
 RUN conda install -y -c menpo opencv3=3.1.0 \
  && conda clean -ya
+
+# Pillow
+RUN pip uninstall pillow  \
+ && pip install pillow==6.1 \
+ && pip install requests
