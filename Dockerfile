@@ -53,8 +53,7 @@ RUN conda install -y -c pytorch \
 
 
 # Tensorflow and other ml libs
-RUN pip install tensorflow-gpu==2.0 \
- && pip install pandas \
+RUN pip install pandas \
  && pip install albumentations \
  && pip install scikit-image \
  && pip install matplotlib \
@@ -90,4 +89,5 @@ RUN conda install -y -c menpo opencv3=3.1.0 \
 RUN pip uninstall -y pillow  \
  && pip install pillow==6.1 \
  && pip install requests \
- && pip install future
+ && pip install future \
+ && pip install -y awscli-plugin-endpoint
