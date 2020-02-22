@@ -90,4 +90,4 @@ RUN pip uninstall -y pillow  \
  && pip install pillow==6.1 \
  && pip install requests \
  && pip install future \
- && pip install -y awscli-plugin-endpoint
+ && pip install awscli-plugin-endpoint
