@@ -89,4 +89,5 @@ RUN conda install -y -c menpo opencv3=3.1.0 \
 RUN pip uninstall -y pillow  \
  && pip install pillow==6.1 \
  && pip install requests \
- && pip install future 
+ && pip install future \
+ && pip install sklearn
