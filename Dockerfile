@@ -12,7 +12,12 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip\
     vim \
-    wget\
+    wget \
+    cmake \
+    g++ \
+    gcc \
+    mesa-common-dev \
+    libgl1-mesa-glx \
 
  && rm -rf /var/lib/apt/lists/*
 
