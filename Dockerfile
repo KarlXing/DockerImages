@@ -1,4 +1,4 @@
-nvidia/cuda:10.1-cudnn7-runtime-ubuntu16.04
+FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu16.04
 
 # Install some basic utilities
 RUN apt-get update && apt-get install -y \
