@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
     libosmesa6-dev \
     libgl1-mesa-glx \
     libglfw3 \
-    libglew2.0
+    libglew2.0 \
+    libgtk2.0-dev
 
 # install mujoco_py
 RUN cd ~ \
