@@ -44,3 +44,8 @@ RUN cd ~/.mujoco \
  && tar -xvf mujoco210-linux-x86_64.tar.gz \
  && pip install pyrender \
  && pip install dm_control
+ 
+# install other rl games
+RUN pip install Box2D \
+ && pip install pybullet==3.2.0 \
+ && pip install procgen==0.10.4
