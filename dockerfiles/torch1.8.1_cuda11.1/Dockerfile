@@ -49,3 +49,7 @@ RUN cd ~/.mujoco \
 RUN pip install Box2D \
  && pip install pybullet==3.2.0 \
  && pip install procgen==0.10.4
+
+# post install/upgrade
+RUN pip install --upgrade numpy \
+ && pip install pyrender
