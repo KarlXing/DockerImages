@@ -29,7 +29,7 @@ RUN cd ~ \
  && mv mujoco200_linux  mujoco200 \
  && wget https://roboti.us/file/mjkey.txt \
  && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin \ 
- && echo 'LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin' >> ~/.bashrc \
+ && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin' >> ~/.bashrc \
  && ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so \
  && pip install 'mujoco-py<2.1,>=2.0'
 
