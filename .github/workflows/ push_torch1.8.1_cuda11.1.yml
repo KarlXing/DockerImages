@@ -3,7 +3,7 @@ name: push jinwei/imagehome:rl
 on:
   push:
     branches:
-    - master
+    - devel
     paths:
     - dockerfiles/torch1.8.1_cuda11.1/*
     - .github/workflows/push_torch1.8.1_cuda11.1.yml
@@ -18,5 +18,5 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: jinwei/imagehome
-        tags: rl-torch1.8.1-cuda11.1
+        tags: rl-torch1.8.1-cuda11.1-devel
         path: dockerfiles/torch1.8.1_cuda11.1

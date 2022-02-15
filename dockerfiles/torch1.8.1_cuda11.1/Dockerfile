@@ -23,26 +23,22 @@ RUN apt-get update && apt-get install -y \
 RUN cd ~ \
  && mkdir .mujoco \
  && cd .mujoco \
- && wget https://roboti.us/download/mujoco200_linux.zip \
- && unzip mujoco200_linux.zip \
- && rm mujoco200_linux.zip \
- && mv mujoco200_linux  mujoco200 \
- && wget https://roboti.us/file/mjkey.txt \
- && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin \ 
- && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin' >> ~/.bashrc \
+ && wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz \
+ && tar -xf mujoco210-linux-x86_64.tar.gz \
+ && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco210/bin \ 
+ && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco210/bin' >> ~/.bashrc \
  && ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so \
  && pip install 'mujoco-py<2.1,>=2.0'
 
 
 # install gym==0.20.0
-RUN pip install gym==0.20.0 \
-&& pip install autorom[accept-rom-license] \
-&& pip install ale_py==0.7.0 
+RUN pip install gym==0.21.0 \
+ && pip install gym[atari, accept-rom-license]
 
 # install dm_control
 RUN cd ~/.mujoco \
- && wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz \
- && tar -xvf mujoco210-linux-x86_64.tar.gz \
+ && wget https://github.com/deepmind/mujoco/releases/download/2.1.1/mujoco-2.1.1-linux-x86_64.tar.gz \
+ && tar -xf mujoco-2.1.1-linux-x86_64.tar.gz \
  && pip install pyrender \
  && pip install dm_control
  
