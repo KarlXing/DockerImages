@@ -34,7 +34,6 @@ RUN cd ~ \
 
 # install gym==0.20.0
 RUN pip install gym==0.21.0 \
- && pip install gym[atari, accept-rom-license]
 
 # install dm_control
 RUN cd ~/.mujoco \
