@@ -28,7 +28,6 @@ RUN cd ~ \
  && tar -xf mujoco210-linux-x86_64.tar.gz \
  && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco210/bin \ 
  && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco210/bin' >> ~/.bashrc \
- && ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so \
  && pip install --upgrade pip \
  && pip install 'mujoco-py<2.2,>=2.1'
 
