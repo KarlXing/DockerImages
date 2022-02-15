@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libglfw3 \
     libglew2.0 \
+    libglew-dev \
     libgtk2.0-dev
 
 # install mujoco_py
