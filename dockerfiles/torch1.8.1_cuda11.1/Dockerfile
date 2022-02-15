@@ -29,7 +29,7 @@ RUN cd ~ \
  && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco210/bin' >> ~/.bashrc \
  && ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so \
  && pip install --upgrade pip \
- && pip install 'mujoco-py<2.1,>=2.0'
+ && pip install 'mujoco-py<2.2,>=2.1'
 
 
 # install gym==0.20.0
