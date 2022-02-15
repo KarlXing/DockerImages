@@ -33,7 +33,7 @@ RUN cd ~ \
 
 
 # install gym==0.20.0
-RUN pip install gym==0.21.0 \
+RUN pip install gym==0.21.0
 
 # install dm_control
 RUN cd ~/.mujoco \
