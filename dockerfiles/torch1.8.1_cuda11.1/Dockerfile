@@ -53,6 +53,6 @@ SHELL ["/bin/bash", "-c"]
 COPY conda_env.yml  .
 RUN conda env create -f conda_env.yml
 
-RUN conda init bash
+RUN ["/bin/bash", "-c", "conda init bash"]
 
 RUN echo "conda activate drqv2" > ~/.bashrc
