@@ -50,9 +50,8 @@ RUN pip install --upgrade numpy \
 
 # drqv2 conda env
 SHELL ["/bin/bash", "-c"]
+RUN conda update -n base -c defaults conda
 COPY conda_env.yml  .
 RUN conda env create -f conda_env.yml
-
 RUN ["/bin/bash", "-c", "conda init bash"]
-
 RUN echo "conda activate drqv2" > ~/.bashrc
