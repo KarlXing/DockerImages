@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libglfw3 \
     libglew2.0 \
+    libglew-dev \
     libgtk2.0-dev
 
 # install mujoco_py
@@ -47,11 +48,22 @@ RUN pip install Box2D \
 RUN pip install --upgrade numpy \
  && pip install pyrender
 
-
-# drqv2 conda env
-SHELL ["/bin/bash", "-c"]
-RUN conda update -n base -c defaults conda
-COPY conda_env.yml  .
-RUN conda env create -f conda_env.yml
-RUN ["/bin/bash", "-c", "conda init bash"]
-RUN echo "conda activate drqv2" > ~/.bashrc
+# drqv2 libraries
+RUN pip install --upgrade pip==21.1.3 \
+  && pip instaabsl-py==0.13.0
+  && pip install pyparsing==2.4.7
+  && pip install scikit-image==0.18.1
+  && pip install termcolor==1.1.0
+  && pip install git+https://github.com/deepmind/dm_control.git
+  && pip install tb-nightly
+  && pip install imageio==2.9.0
+  && pip install imageio-ffmpeg==0.4.4
+  && pip install hydra-core==1.1.0
+  && pip install hydra-submitit-launcher==1.1.5
+  && pip install pandas==1.3.0
+  && pip install ipdb==0.13.9
+  && pip install yapf==0.31.0
+  && pip install mujoco_py==2.0.2.13
+  && pip install sklearn==0.0
+  && pip install matplotlib==3.4.2
+  && pip install opencv-python==4.5.3.56
