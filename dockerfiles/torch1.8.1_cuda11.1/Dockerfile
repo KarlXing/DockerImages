@@ -49,7 +49,7 @@ RUN pip install --upgrade numpy \
 
 # drqv2 libraries
 RUN pip install --upgrade pip==21.1.3 \
-  && pip instaabsl-py==0.13.0 \
+  && pip install absl-py==0.13.0 \
   && pip install pyparsing==2.4.7 \
   && pip install scikit-image==0.18.1 \
   && pip install termcolor==1.1.0 \
