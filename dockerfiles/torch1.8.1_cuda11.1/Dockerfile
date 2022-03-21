@@ -49,7 +49,7 @@ RUN pip install --upgrade numpy \
 
 
 # drqv2 conda env
-SHELL ["/bin/bash", "--login", "-c"]
+SHELL ["/bin/bash", "-c"]
 COPY conda_env.yml  .
 RUN conda env create -f conda_env.yml
 
