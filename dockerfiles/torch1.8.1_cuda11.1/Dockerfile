@@ -31,21 +31,13 @@ RUN cd ~ \
  && export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin \ 
  && echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mujoco200/bin' >> ~/.bashrc \
  && ln -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so \
- && pip install 'mujoco-py<2.1,>=2.0'
+ && pip install 'mujoco-py<2.1,>=2.0' \
+ && echo 'export MUJOCO_PY_MUJOCO_PATH=/root/.mujoco/mujoco200' >> ~/.bashrc \
+ && echo 'export MUJOCO_PY_MJKEY_PATH=/root/.mujoco/mjkey.txt' >> ~/.bashrc 
 
+ENV MUJOCO_PY_MUJOCO_PATH /root/.mujoco/mujoco200
+ENV MUJOCO_PY_MJKEY_PATH /root/.mujoco/mjkey.txt
 
-# install gym==0.20.0
-RUN pip install gym==0.20.0 \
-&& pip install autorom[accept-rom-license] \
-&& pip install ale_py==0.7.0 
-
-# install dm_control
-RUN cd ~/.mujoco \
- && wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz \
- && tar -xvf mujoco210-linux-x86_64.tar.gz \
- && pip install pyrender \
- && pip install dm_control
- 
 # install other rl games
 RUN pip install Box2D \
  && pip install pybullet==3.2.0 \
@@ -54,3 +46,13 @@ RUN pip install Box2D \
 # post install/upgrade
 RUN pip install --upgrade numpy \
  && pip install pyrender
+
+
+# drqv2 conda env
+SHELL ["/bin/bash", "--login", "-c"]
+COPY conda_env.yml  .
+RUN conda env create -f conda_env.yml
+
+RUN conda init bash
+
+RUN echo "conda activate drqv2" > ~/.bashrc
